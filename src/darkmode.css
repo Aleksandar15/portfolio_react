@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+/* 
+html,body {
+	padding: 0;
+	margin: 0;
+	scroll-behavior: smooth;
+} */
+/* 
+body *{
+	transition: 0.3s;
+} */
+
+body.dark {
+	--mainColor:#080808;
+	--secondaryColor:#151515;
+
+	--borderColor:#164D56;
+
+	--mainText:#fff;
+	--secondaryText:#eeeeee;
+
+	--themeDotBorder:#FFF;
+
+	--previewBg:rgb(33, 33, 33, 0.7);
+	--previewShadow:#0b0b0b;
+
+
+	--buttonColor:#46b3ad;
+  --titleColor: rgb(171, 241, 218);
+  --introColor: #a1a2a3;
+  --darkmode: rgb(162, 197, 185);
+  --viewsiteBg: #498f8c;
+  --viewsiteBgHover: rgb(67, 67, 121);
+}
+
+.checkbox {
+	opacity: 0;
+	position: absolute;
+}
+
+.label {
+	background-color: rgb(33,33,33);
+	border-radius: 50px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 5px;
+	position: relative;
+	height: 26px;
+	width: 50px;
+	transform: scale(1.5);
+}
+
+.label .ball {
+	background-color: rgb(165,165,165);
+	border-radius: 50%;
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	height: 22px;
+	width: 22px;
+	transform: translateX(0px);
+	transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball {
+	transform: translateX(24px);
+}
+
+
+.fa-moon {
+	color: #f1c40f;
+}
+
+.fa-sun {
+	color: #f39c12;
+}
