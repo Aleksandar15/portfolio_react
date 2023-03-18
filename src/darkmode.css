@@ -1,14 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 
 * {
+  /* Keep section element of className="s1" 
+  in same shape even when screen is resized */
 	box-sizing: border-box;
 }
+
 /* 
 html,body {
 	padding: 0;
 	margin: 0;
 	scroll-behavior: smooth;
 } */
+
 /* 
 body *{
 	transition: 0.3s;
@@ -35,6 +39,12 @@ body.dark {
   --darkmode: rgb(162, 197, 185);
   --viewsiteBg: #498f8c;
   --viewsiteBgHover: rgb(67, 67, 121);
+
+   /* dark mode label switcher */
+   --backgroundLabelSwitch: rgb(66,66,66);
+
+    /* ScrollToTop component */
+    --bgColorScrollToTop: gray;
 }
 
 .checkbox {
@@ -43,7 +53,10 @@ body.dark {
 }
 
 .label {
-	background-color: rgb(33,33,33);
+	/* background-color: rgb(33,33,33); */
+	/* background-color: rgb(93, 85, 85); */
+	/* background-color: rgb(66, 66, 66); */
+  background-color: var(--backgroundLabelSwitch);
 	border-radius: 50px;
 	cursor: pointer;
 	display: flex;
@@ -73,10 +86,16 @@ body.dark {
 }
 
 
-.fa-moon {
+/* .fa-moon {
 	color: #f1c40f;
+} */
+.fa-moon-o {
+	color: cyan;
 }
 
-.fa-sun {
+/* .fa-sun {
+	color: #f39c12;
+} */
+.fa-sun-o {
 	color: #f39c12;
 }
