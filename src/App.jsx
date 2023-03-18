@@ -1,6 +1,3 @@
-// import { useEffect } from "react";
-// import { useState } from "react";
-// import ScrollToTop from "react-scroll-to-top";
 import "./LightMode.css";
 import "./DarkMode.css";
 import { Route, Routes } from "react-router-dom";
