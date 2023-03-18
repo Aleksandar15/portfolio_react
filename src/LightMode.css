@@ -116,6 +116,11 @@ h6 { font-size: 16px;}
 	background-color: var(--mainColor);
 	border-bottom:1px solid var(--borderColor);
 	overflow:auto;
+  /* for resized */
+  /* height: 1050px; */
+  /* for phones */
+  /* height: 1100px; */
+
 }
 
 .s2{
@@ -504,6 +509,20 @@ background: blue;
 	.main-container{
 		width: 95%;
 	}
+
+}
+
+@media screen and (max-width:800px) and (min-width:421px) {
+  /* for s1 class to avoid scrollbar on phone sizes */
+  .s1 {
+    height: 1050px;
+  }
+}
+@media screen and (max-width:420px) and (min-width:1px) {
+  /* for s1 class to avoid scrollbar on phone sizes */
+  .s1 {
+    height: 1100px;
+  }
 }
 
 @media screen and (max-width: 800px){
