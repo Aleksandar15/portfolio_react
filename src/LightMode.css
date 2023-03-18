@@ -221,7 +221,7 @@ h6 { font-size: 16px;}
 .left-column{
 	grid-area: left-column;
 	padding-top:50px;
-	padding-bottom: 50px;--mainText:rgb(66,66,66);
+	padding-bottom: 50px;
 }
 
 #profile_pic{
@@ -469,7 +469,8 @@ h6 { font-size: 16px;}
 
   /* ScrollToTop component */
 .scrollToTopComponent {
-  background-color: var(--bgColorScrollToTop);
+  /* requires !important to overwrite defaults */
+  background-color: var(--bgColorScrollToTop) !important;
 }
 
 
