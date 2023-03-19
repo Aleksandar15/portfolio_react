@@ -15,4 +15,5 @@ export const openModalSlice = createSlice({
 });
 
 export const { openModal } = openModalSlice.actions;
-export const selectOpenModal = (state) => state.openModalSlice.isModalOpen;
+// export const selectOpenModal = (state) => state.openModalSlice.isModalOpen;
+export const selectOpenModal = (state) => state.openModalSlice;

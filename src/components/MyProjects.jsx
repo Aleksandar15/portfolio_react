@@ -1,9 +1,16 @@
 import { useRef } from "react";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { openModal, selectOpenModal } from "../redux/slices/openModalSlice";
+import { setProjectIdentifier } from "../redux/slices/projectInfoSlice";
 import MyModal from "./MyModal";
 
 const MyProjects = () => {
   const [showChild, setShowChild] = useState(false);
+  const dispatch = useDispatch();
+  // const isModalOpen = useSelector(selectOpenModal);
+  const { isModalOpen } = useSelector(selectOpenModal);
+  console.log('MYPROJECTS isModalOpen:"', isModalOpen);
 
   const handleTouchStart = () => {
     setShowChild(!showChild);
@@ -26,7 +33,7 @@ const MyProjects = () => {
     // e.stopPropagation();
     // e.preventDefault();
     //
-    setShowModal(!showModal);
+    // setShowModal(!showModal);
     console.log(
       "event.target Button Click:",
       e.target,
@@ -37,14 +44,24 @@ const MyProjects = () => {
       // //results: a DOMStringMap: {target: 'project_1'}
     );
     // redux:
-    dispa;
+    // dispatch(openModal(!showModal));
+    // dispatch(openModal(!isModalOpen));
+    dispatch(openModal({ isModalOpen: !isModalOpen }));
+    dispatch(
+      setProjectIdentifier({ projectIdentifier: e.target.dataset.target })
+    );
   };
 
   return (
     <>
-      <MyModal receivedShow={showModal} receivedShowSetter={setShowModalFN}>
+      {/* <MyModal receivedShow={showModal} receivedShowSetter={setShowModalFN}> */}
+      {/* <MyModal>
         <button onClick={() => alert("hlelo world")}>Hello22</button>
-      </MyModal>
+      </MyModal> */}
+
+      {/*  */}
+      <MyModal />
+
       <section className="s1">
         <div className="main-container">
           <h3 style={{ textAlign: "center" }}>MY PROJECTS</h3>
@@ -167,9 +184,9 @@ const MyProjects = () => {
                   >
                     View Source Code
                   </a>
-                  <MyModal>
+                  {/* <MyModal>
                     <h1 style={{ color: "red" }}>2ndAleksandar TEST</h1>
-                  </MyModal>
+                  </MyModal> */}
                 </div>
               </div>
             </div>
