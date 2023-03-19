@@ -65,7 +65,11 @@ const AboutMeSection = () => {
               src="images/Logo hand-drawn-web-developers.jpg"
             />
             <h3>
-              <a target="_blank" href="Aleksandar15.pdf">
+              <a
+                target="_blank"
+                href="Aleksandar15.pdf"
+                className="anchorTagOverrideBootstrap viewResume"
+              >
                 View Resume
               </a>
             </h3>
