@@ -68,15 +68,29 @@
 
   /* ScrollToTop component */
   --bgColorScrollToTop: green;
+
+  /* Modal */
+  /* --backgroundModalSwitch: whitesmoke; */
+  --backgroundModalSwitch: rgba(245, 245, 245, 0.85);
+  --spanProjectDescriptionColor: #2ACA3E;
+  --h3colorModalTitle: #A13E;
 }
 
 
-
+/* offCanvasGrandpa{} */
+/* .offcanvas-open {
+  user-select: none;
+} */
+/* body.offcanvas-open {
+  user-select: none;
+} */
 
 html, body{
 	padding: 0;
 	margin: 0;
 	scroll-behavior: smooth;
+  /* so: */
+  z-index: 998;
 }
 
 /* body *{
@@ -100,8 +114,9 @@ a{
 	color:#17a2b8;
 }
 
+
 ul{
-	list-style: none;
+  list-style: none;
 }
 
 h1 { font-size: 56px;}
@@ -111,6 +126,11 @@ h4 { font-size: 24px;}
 h5 { font-size: 20px;}
 h6 { font-size: 16px;}
 
+/* Override bootstrap */
+.anchorTagOverrideBootstrap{
+  text-decoration: none;
+}
+/* Ends bootstrap overriding */
 
 .s1{
 	background-color: var(--mainColor);
@@ -131,6 +151,9 @@ h6 { font-size: 16px;}
 .main-container{
 	width: 1200px;
 	margin: 0 auto;
+  /*  */
+	/* margin: 10px auto;
+  padding: 10px; */
 }
 
 
@@ -238,6 +261,8 @@ h6 { font-size: 16px;}
   text-align: center;
   line-height: 0;
   color: var(--darkmode);
+  /* line-height: 200%; */
+  /* line-height: 30px; */
 }
 
 #theme-options-wrapper{
@@ -345,10 +370,13 @@ h6 { font-size: 16px;}
 	display: grid;
 	align-content: center;
 	text-align: center;
+  /*  */
+  /* margin-bottom: 50px; */
 }
 
 #social_img{
 	width: 100%;
+  /* line-height: 300px; */
 }
 
 
@@ -374,6 +402,60 @@ h6 { font-size: 16px;}
 	height:180px;
 	object-fit: cover;
 }
+
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* opacity for the "Read More" text
+  when not hovering */
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: rgb(3, 3, 3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.image-wrapper:hover .text-overlay {
+  /* opacity for the image behind */
+  opacity: 1;
+  font-size: 33px;
+  font-weight: bold;
+}
+.readMoreImageHover {
+  cursor: pointer;
+  /* text-decoration: underline; */
+}
+.spanReadMoreImageHover{
+  /* 'block' to render it on new line */
+  display: block;
+  font-size: 12px;
+  text-align: center;
+  /* align-items: center; */
+  cursor: default;
+  font-weight: normal;
+}
+
+.spanReadMoreAnchorHover{
+  /* 'block' to render it on new line */
+  display: block;
+  font-size: 12px;
+  text-align: end;
+  /* align-items: center; */
+  cursor: default;
+  font-weight: normal;
+  /* color:#17a2b8; */
+  }
+
 
 .post-preview{
 	background-color: rgba(255, 255, 255, 0.1);
@@ -498,6 +580,163 @@ background: blue;
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 0, 255, 0.777); 
 }
+
+/* Project's offcanvas and buttons */
+.projectOpenCanvas {
+  /* cursor:pointer; */
+}
+.readMore {
+  display: none;
+  margin-left: 5px;
+  color:#17a2b8;
+  text-decoration: none;
+}
+.readMore:hover{
+  color:#17a2b8;
+}
+.projectOpenCanvas:hover .readMore {
+  display: inline;
+  cursor:pointer;
+}
+
+/* AboutMe section */
+.viewResume{
+  /* margin/padding doesnt get affected
+  but rather its parent's styles matter */
+  /* margin-top: 50px; */
+  color:#17a2b8;
+}
+
+
+
+/*  */
+/* Offcanvas custom */
+.offcanvas-wrapper {
+  /* position: relative; */
+  /* position: absolute; */
+  /* position: relative; */
+  position: fixed;
+}
+
+.offcanvas {
+  /* position: absolute; */
+  position: fixed;
+  /* dont use 'absolute' from Projects icons
+  it prolongs the BOX to be DOWN LONG */
+  /* position: absolute; */
+  top: 0;
+  /* left: -100%; */
+  /* left: -200%; */
+  left: -1000%;
+  /* width: 80%;
+  height: 100%; */
+  /* tests: */
+  width: 800px;
+  height: 1000px;
+  /* height: 100vh; */
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: left 0.3s ease-out;
+  /* new tests: */
+  max-width: 100vw;
+  max-height: 100vh;
+}
+
+.open {
+  left: 0;
+}
+
+.close-button {
+  position: absolute;
+  /* position: relative; */
+  top: 0;
+  right: 0;
+  font-size: 2rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.offcanvas-content {
+  padding: 1rem;
+}
+
+
+/*  */
+/* Offcanvas2 custom */
+/* .off-canvas-overlay {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.off-canvas-wrapper {
+  position: fixed;
+  z-index: 1001;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 30%;
+  background-color: #ffffff;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.off-canvas-content {
+  height: 100%;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.off-canvas-wrapper.open {
+  transform: translateX(0);
+} */
+
+
+/*  */
+/* MyModal */
+.mymodal-wrapper{
+  background-color: var(--backgroundModalSwitch);
+  border-radius: 25px;
+  /* text-align: center; */
+}
+.h3ModalProjectTitle{
+  color: var(--h3colorModalTitle);
+  text-align: center;
+}
+.spanModalProjectTitle{
+  font-family: 'Russo One', sans-serif;
+  text-decoration: underline;
+  color: red;
+}
+.spanModalProjectDescription{
+  /* font-family: 'Russo One', sans-serif; */
+  /* font-family:  system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+  font-family: sans-serif;
+  /* font-family: source-sans-pro; */
+  /* text-decoration: underline; */
+  font-weight: bold;
+  color: var(--spanProjectDescriptionColor);
+  /* font-size: 18px; */
+  font-size: 17px;
+}
+.pTagModalDescription{
+  font-family: 'Russo One', sans-serif;
+  font-size: 18px;
+  color: #A3E;
+  font-size: 20px;
+}
+.spanModalClickOutside{
+  font-size: 10px;
+  position: relative;
+  left: 39%;
+  top: 0px;
+}
+
 
 
 /* Different screen sizes */
