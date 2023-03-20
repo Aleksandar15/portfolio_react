@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { MoreInfoProjects } from "../assets/MoreInfoProjects";
 // import ScrollToTop from "react-scroll-to-top";
 import { openModal, selectOpenModal } from "../redux/slices/openModalSlice";
 import { selectProjectIdentifier } from "../redux/slices/projectInfoSlice";
@@ -108,35 +109,45 @@ const MyModalProjects = () => {
                 <h3 className="h3ModalProjectTitle">
                   Title:{" "}
                   <span className="spanModalProjectTitle">
-                    {projectInfos[projectIdentifier]?.title}
+                    {/* {projectInfos[projectIdentifier]?.title} */}
+                    {MoreInfoProjects[projectIdentifier]?.title}
                   </span>
                 </h3>
+
+                {/* Technologies: */}
+                <p className="pTagModalTechnologies">
+                  Technologies:{" "}
+                  {/* {projectInfos[projectIdentifier]?.technologies === undefined ||
+                  projectInfos[projectIdentifier]?.technologies === "" ? ( */}
+                  {MoreInfoProjects[projectIdentifier]?.technologies ===
+                    undefined ||
+                  MoreInfoProjects[projectIdentifier]?.technologies === "" ? (
+                    <span className="spanModalProjectTechnologies">
+                      Technologies not yet provided.
+                    </span>
+                  ) : (
+                    <span className="spanModalProjectTechnologies">
+                      {/* {projectInfos[projectIdentifier]?.technologies} */}
+                      {MoreInfoProjects[projectIdentifier]?.technologies}
+                    </span>
+                  )}
+                </p>
+
                 {/* Description: */}
                 <p className="pTagModalDescription">
                   Description:{" "}
-                  {projectInfos[projectIdentifier] === undefined ||
-                  projectInfos[projectIdentifier] === "" ? (
+                  {/* {projectInfos[projectIdentifier] === undefined ||
+                  projectInfos[projectIdentifier] === "" ? ( */}
+                  {MoreInfoProjects[projectIdentifier] === undefined ||
+                  MoreInfoProjects[projectIdentifier] === "" ? (
                     <span className="spanModalProjectDescription">
                       {/* Not yet provided. */}
                       Description not yet provided.
                     </span>
                   ) : (
                     <span className="spanModalProjectDescription">
-                      {projectInfos[projectIdentifier]?.description}
-                    </span>
-                  )}
-                </p>
-                {/* Technologies: */}
-                <p className="pTagModalTechnologies">
-                  Technologies:{" "}
-                  {projectInfos[projectIdentifier] === undefined ||
-                  projectInfos[projectIdentifier] === "" ? (
-                    <span className="spanModalProjectTechnologies">
-                      Technologies not yet provided.
-                    </span>
-                  ) : (
-                    <span className="spanModalProjectTechnologies">
-                      {projectInfos[projectIdentifier]?.description}
+                      {/* {projectInfos[projectIdentifier]?.description} */}
+                      {MoreInfoProjects[projectIdentifier]?.description}
                     </span>
                   )}
                 </p>
