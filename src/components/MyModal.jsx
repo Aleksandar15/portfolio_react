@@ -114,7 +114,7 @@ const MyModal = () => {
                 {/* Description: */}
                 <p className="pTagModalDescription">
                   Description:{" "}
-                  {projectInfos[projectIdentifier] === undefined || "" ? (
+                  {projectInfos[projectIdentifier] === (undefined || "") ? (
                     <span className="spanModalProjectDescription">
                       {/* Not yet provided. */}
                       Description not yet provided.
@@ -128,7 +128,7 @@ const MyModal = () => {
                 {/* Technologies: */}
                 <p className="pTagModalTechnologies">
                   Technologies:{" "}
-                  {projectInfos[projectIdentifier] === undefined || "" ? (
+                  {projectInfos[projectIdentifier] === (undefined || "") ? (
                     <span className="spanModalProjectTechnologies">
                       Technologies not yet provided.
                     </span>
