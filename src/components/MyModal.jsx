@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+// import ScrollToTop from "react-scroll-to-top";
 import { openModal, selectOpenModal } from "../redux/slices/openModalSlice";
 import { selectProjectIdentifier } from "../redux/slices/projectInfoSlice";
 import LoadingComponent from "./LoadingComponent";
@@ -43,9 +44,9 @@ const MyModal = () => {
         // 3
         // "Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long",
         // 4
-        // "Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long",
-        // 5
-        "Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long",
+        "Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long",
+      // 5
+      // "Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long",
       // // // its not yet scrollable if its TOO long top & bottom arent seen
     },
     project_3: {
@@ -99,6 +100,10 @@ const MyModal = () => {
               <LoadingComponent />
             ) : (
               <>
+                {/* Scroll component isn't scoped to this div
+                but rather to the whole body */}
+                {/* <ScrollToTop /> */}
+
                 {/* TITLE: */}
                 <h3 className="h3ModalProjectTitle">
                   Title:{" "}
@@ -109,16 +114,29 @@ const MyModal = () => {
                 {/* Description: */}
                 <p className="pTagModalDescription">
                   Description:{" "}
-                  <span className="spanModalProjectDescription">
-                    {projectInfos[projectIdentifier]?.description}
-                  </span>
+                  {projectInfos[projectIdentifier] === undefined || "" ? (
+                    <span className="spanModalProjectDescription">
+                      {/* Not yet provided. */}
+                      Description not yet provided.
+                    </span>
+                  ) : (
+                    <span className="spanModalProjectDescription">
+                      {projectInfos[projectIdentifier]?.description}
+                    </span>
+                  )}
                 </p>
                 {/* Technologies: */}
-                <p className="pTagModalDescription">
-                  Description:{" "}
-                  <span className="spanModalProjectDescription">
-                    {projectInfos[projectIdentifier]?.description}
-                  </span>
+                <p className="pTagModalTechnologies">
+                  Technologies:{" "}
+                  {projectInfos[projectIdentifier] === undefined || "" ? (
+                    <span className="spanModalProjectTechnologies">
+                      Technologies not yet provided.
+                    </span>
+                  ) : (
+                    <span className="spanModalProjectTechnologies">
+                      {projectInfos[projectIdentifier]?.description}
+                    </span>
+                  )}
                 </p>
 
                 <span className="spanModalClickOutside">

@@ -74,6 +74,7 @@
   --backgroundModalSwitch: rgba(245, 245, 245, 0.85);
   --spanProjectDescriptionColor: #2ACA3E;
   --h3colorModalTitle: #A13E;
+  --pColorModalTechnologies: rgb(51, 160, 238);
 }
 
 
@@ -633,7 +634,8 @@ background: blue;
 }
 .spanModalProjectTitle{
   font-family: 'Russo One', sans-serif;
-  text-decoration: underline;
+  /* text-decoration: underline; */
+  text-decoration: overline underline;
   color: red;
 }
 .spanModalProjectDescription{
@@ -649,7 +651,7 @@ background: blue;
 }
 .pTagModalDescription{
   font-family: 'Russo One', sans-serif;
-  font-size: 18px;
+  /* font-size: 18px; */
   color: #A3E;
   font-size: 20px;
 }
@@ -659,6 +661,24 @@ background: blue;
   left: 39%;
   top: 0px;
 }
+/* Project's technologies */
+.pTagModalTechnologies{
+  font-family: 'Russo One', sans-serif;
+  font-size: 17px;
+  color: var(--pColorModalTechnologies);
+}
+.spanModalProjectTechnologies{
+  /* font-family: sans-serif; */
+  font-family: source-sans-pro;
+  /* text-decoration: underline; */
+  font-weight: bold;
+  /* font-size: 18px; */
+  font-size: 16px;
+  /* color: var(--spanProjectDescriptionColor); */
+  /* color: rgb(70, 255, 42); */
+  color: rgb(255, 131, 42);
+}
+
 
 
 
