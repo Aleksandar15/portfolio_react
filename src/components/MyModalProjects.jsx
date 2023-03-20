@@ -5,7 +5,7 @@ import { openModal, selectOpenModal } from "../redux/slices/openModalSlice";
 import { selectProjectIdentifier } from "../redux/slices/projectInfoSlice";
 import LoadingComponent from "./LoadingComponent";
 
-const MyModal = () => {
+const MyModalProjects = () => {
   const { isModalOpen } = useSelector(selectOpenModal);
   const dispatch = useDispatch();
   const { projectIdentifier } = useSelector(selectProjectIdentifier);
@@ -164,4 +164,4 @@ const MyModal = () => {
   );
 };
 
-export default MyModal;
+export default MyModalProjects;

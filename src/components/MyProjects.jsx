@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { myProjectsArray } from "../assets/MyProjectsArray";
 import { openModal, selectOpenModal } from "../redux/slices/openModalSlice";
 import { setProjectIdentifier } from "../redux/slices/projectInfoSlice";
-import MyModal from "./MyModal";
+import MyModalProjects from "./MyModalProjects";
 
 const MyProjects = () => {
   const dispatch = useDispatch();
@@ -38,7 +38,7 @@ const MyProjects = () => {
 
   return (
     <>
-      <MyModal />
+      <MyModalProjects />
       <section className="s1">
         <div className="main-container">
           <h3 style={{ textAlign: "center" }}>MY PROJECTS</h3>
@@ -46,7 +46,6 @@ const MyProjects = () => {
             {myProjectsArray.map((project) => {
               return (
                 <div key={project.id}>
-                  {console.log("project:", project)}
                   <div className="post zoom">
                     <div className="image-wrapper">
                       <img className="thumbnail" src={project.SRCimage} />
@@ -56,7 +55,7 @@ const MyProjects = () => {
                           onClick={setShowModalFN}
                           data-target={project.projectIdentifier}
                         >
-                          Read more
+                          READ MORE
                         </p>
                         {/* Optional: */}
                         <span className="spanReadMoreImageHover">
