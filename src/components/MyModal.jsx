@@ -77,10 +77,11 @@ const MyModal = () => {
             style={{
               padding: "20px",
               width: "80%",
-              maxWidth: "600px",
+              // maxWidth: "600px",
               zIndex: 1000,
               overflow: "hidden",
-              maxWidth: "700px",
+              // maxWidth: "700px",
+              maxWidth: "750px",
               minHeight: "300px",
               textAlign: "justify",
             }}
