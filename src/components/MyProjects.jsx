@@ -6,13 +6,13 @@ import { setProjectIdentifier } from "../redux/slices/projectInfoSlice";
 import MyModal from "./MyModal";
 
 const MyProjects = () => {
-  // const [showChild, setShowChild] = useState(false);
   const dispatch = useDispatch();
   const { isModalOpen } = useSelector(selectOpenModal);
-  // console.log('MYPROJECTS isModalOpen:"', isModalOpen);
+
+  // const [showChild, setShowChild] = useState(false);
 
   // // For phones & desktop react-way
-  // // to implement extra text
+  // // to render extra elements on 'hover'
   // // except it'd require a unique ID
   // // otherwise hovering 1 element shows child components
   // // of all the 'project-boxes'
@@ -26,30 +26,19 @@ const MyProjects = () => {
   //   setShowChild(false);
   // };
 
-  // modal
+  // Modal
   const setShowModalFN = (e) => {
-    // e.stopPropagation();
-    // e.preventDefault();
-    //
-    // setShowModal(!showModal);
-    console.log(
-      "event.target Button Click:",
-      e.target,
-      "&& e.target.dataset.target:",
-      e.target.dataset.target
-    );
     dispatch(openModal({ isModalOpen: !isModalOpen }));
     dispatch(
-      setProjectIdentifier({ projectIdentifier: e.target.dataset.target })
+      setProjectIdentifier({
+        projectIdentifier: e.target.dataset.target,
+      })
     );
   };
-
-  console.log("myProjectsArray", myProjectsArray);
 
   return (
     <>
       <MyModal />
-
       <section className="s1">
         <div className="main-container">
           <h3 style={{ textAlign: "center" }}>MY PROJECTS</h3>
@@ -60,11 +49,7 @@ const MyProjects = () => {
                   {console.log("project:", project)}
                   <div className="post zoom">
                     <div className="image-wrapper">
-                      <img
-                        className="thumbnail"
-                        // src="images/KING-Store-Clothes.jpg"
-                        src={project.SRCimage}
-                      />
+                      <img className="thumbnail" src={project.SRCimage} />
                       <div className="text-overlay">
                         <p
                           className="readMoreImageHover"
@@ -105,12 +90,8 @@ const MyProjects = () => {
                             (stays on same page)
                           </span>
                           )} */}
-                          {/* <span className="spanReadMoreAnchorHover">
-                            (stays on same page)
-                          </span> */}
                         </p>
                         <a
-                          // href="https://king-store-clothes-alek.netlify.app"
                           href={project.viewWebsiteHREF}
                           target="_blank"
                           className="viewsite"
@@ -119,7 +100,6 @@ const MyProjects = () => {
                         </a>
                         <a
                           className="viewsite"
-                          // href="https://github.com/Aleksandar15/king-store-clothes"
                           href={project.viewSourceCodeHREF}
                           target="_blank"
                         >

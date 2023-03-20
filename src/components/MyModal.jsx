@@ -43,7 +43,10 @@ const MyModal = () => {
         // 3
         // "Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long",
         // 4
-        "Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long",
+        // "Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long",
+        // 5
+        "Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long",
+      // // // its not yet scrollable if its TOO long top & bottom arent seen
     },
     project_3: {
       title: "Task Manager APP user auth",
@@ -84,6 +87,9 @@ const MyModal = () => {
               maxWidth: "750px",
               minHeight: "300px",
               textAlign: "justify",
+              // for when/if text gets too long:
+              maxHeight: "500px",
+              overflow: "auto",
             }}
             onClick={(e) => e.stopPropagation()}
             className="mymodal-wrapper"
@@ -101,6 +107,13 @@ const MyModal = () => {
                   </span>
                 </h3>
                 {/* Description: */}
+                <p className="pTagModalDescription">
+                  Description:{" "}
+                  <span className="spanModalProjectDescription">
+                    {projectInfos[projectIdentifier]?.description}
+                  </span>
+                </p>
+                {/* Technologies: */}
                 <p className="pTagModalDescription">
                   Description:{" "}
                   <span className="spanModalProjectDescription">
