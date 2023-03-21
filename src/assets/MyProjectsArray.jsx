@@ -1,3 +1,8 @@
+// // NOTE: when changing the "projectIdentifier"'s # in "project_#"
+// // ^-> has to be also properly modified inside 'MoreInfoProjcts.jsx'.
+
+// // NOTE2: images should be at ~1.8 aspect ratio width/height.
+
 // // Empty object project skeleton for usage:
 // {
 //   id: 0,
@@ -76,8 +81,7 @@ export const myProjectsArray = [
     projectIdentifier: "project_7",
     SRCimage: "images/robo-app.jpg",
     projectTitle: "Robo-App",
-    projectIntro: `I used JavaScript with React+Redux in this project. You can
-    search for a robot by its name.`,
+    projectIntro: `I used JavaScript with React+Redux in this project. Users can search the robot by its name.`,
     viewWebsiteHREF: "https://aleksandar15.github.io/robo-app",
     viewSourceCodeHREF: "https://github.com/Aleksandar15/robo-app",
   },
@@ -86,8 +90,8 @@ export const myProjectsArray = [
     projectIdentifier: "project_8",
     SRCimage: "images/landingPage.jpg",
     projectTitle: "Lading Page",
-    projectIntro: `Created using JS, HTML5 and CSS3 with Bootstrap 4 framework.
-    Landing page made ready.`,
+    projectIntro: `Created landing page using JavaScript, HTML5 and CSS3 with Bootstrap 4 framework.
+    `,
     viewWebsiteHREF: "https://aleksandar15.github.io",
     viewSourceCodeHREF:
       "https://github.com/Aleksandar15/aleksandar15.github.io",
@@ -97,7 +101,7 @@ export const myProjectsArray = [
     projectIdentifier: "project_9",
     SRCimage: "images/Password Generator.jpg",
     projectTitle: "Password Generator",
-    projectIntro: `I created this project with Javascript. Generate a strong
+    projectIntro: `I created this project with Javascript. Users can create a strong
     password!`,
     viewWebsiteHREF: "https://aleksandar15.github.io/PasswordGenerator",
     viewSourceCodeHREF: "https://github.com/Aleksandar15/PasswordGenerator",
