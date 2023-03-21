@@ -121,11 +121,6 @@ h4 { font-size: 24px;}
 h5 { font-size: 20px;}
 h6 { font-size: 16px;}
 
-/* Override bootstrap */
-.anchorTagOverrideBootstrap{
-  text-decoration: none;
-}
-/* Ends bootstrap overriding */
 
 .s1{
 	background-color: var(--mainColor);
@@ -322,6 +317,10 @@ h6 { font-size: 16px;}
 	left: -5px
 }
 
+
+/*  */
+/* AboutMeSection stylings */
+
 .about-wrapper{
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -333,13 +332,17 @@ h6 { font-size: 16px;}
 
 #skills{
 	display: flex;
-	justify-content: space-evenly;
+	/* justify-content: space-evenly; */
+	justify-content: space-around;
+	/* justify-content: space-between; */
 	background-color: var(--previewShadow);
 }
 
 #medium-skills {
   display: flex;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
+  justify-content: space-around;
+  /* justify-content: center; */
   background-color: var(--previewShadow);
   /* justify-content: center; */
 }
@@ -350,7 +353,7 @@ h6 { font-size: 16px;}
 }
 #medium-skill-name {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   text-indent: 44px;
   /* margin-left: 40px; */
   /* justify-content: center; */
@@ -373,6 +376,37 @@ h6 { font-size: 16px;}
 	width: 100%;
   /* line-height: 300px; */
 }
+
+.alertOpensInNewTab{
+  /* "display: none" is not as good because 
+  current styling shifts the image up/down */
+  /* display: none; */
+  /* Alternative: 'visiblity' or 'opacity' */
+  /* collapse/hidden works the same unless
+  they're used on table elements then 'collapse'
+  works as if `display:none` */
+  visibility: collapse;
+  /* visibility: hidden; */
+  display: block;
+  /* font-size MUST match ".viewResume:hover"
+  otherwise shifts the image up/down */
+  font-size: 11px;
+}
+
+.viewResume:hover .alertOpensInNewTab{
+  visibility: visible;
+  font-size: 11px;
+  /* Move it further down from the button */
+  /* padding-top: 10px; */
+  /* margin-top:10px; */
+  /* Padding/margin won't work as expected
+  since they shift the whole image up/down */
+  /* Alternative: */
+  position: relative;
+  top:8px;
+}
+
+/*  */
 
 
 .post-wrapper{

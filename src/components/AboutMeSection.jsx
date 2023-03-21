@@ -26,12 +26,12 @@ const AboutMeSection = () => {
             <div id="skills">
               <ul>
                 <li>JavaScript</li>
-                <li>React & Redux</li>
+                <li>React.js</li>
+                <li>Redux</li>
                 <li>Node.js</li>
                 <li>Express.js</li>
                 <li>PostgreSQL</li>
                 <li>MySQL</li>
-                <li>NPM</li>
               </ul>
 
               <ul>
@@ -39,8 +39,8 @@ const AboutMeSection = () => {
                 <li>CSS3</li>
                 <li>WebSockets</li>
                 <li>Git & Github</li>
-                <li>Redis</li>
                 <li>MongoDB</li>
+                <li>NPM</li>
                 <li>Heroku</li>
               </ul>
             </div>
@@ -51,8 +51,7 @@ const AboutMeSection = () => {
             <div id="medium-skills">
               <ul>
                 <li>TypeScript</li>
-                <li>AWS</li>
-                <li>GraphQL</li>
+                <li>Redis</li>
                 <li>Docker</li>
               </ul>
               {/* <!-- </div> --> */}
@@ -60,20 +59,26 @@ const AboutMeSection = () => {
           </div>
 
           <div className="social-links">
-            <img
-              id="social_img"
-              src="images/Logo hand-drawn-web-developers.jpg"
-            />
-            <h3>
+            {/* <h3>
               <a
                 target="_blank"
                 href="Aleksandar15.pdf"
                 className="anchorTagOverrideBootstrap viewResume"
               >
+                Read more about me
+              </a>
+            </h3> */}
+            <img
+              id="social_img"
+              src="images/Logo hand-drawn-web-developers.jpg"
+            />
+            <h3>
+              <a target="_blank" href="Aleksandar15.pdf" className="viewResume">
                 View Resume
+                <span className="alertOpensInNewTab">(opens in new tab)</span>
               </a>
             </h3>
-            <br />
+            {/* <br /> */}
           </div>
         </div>
       </div>
