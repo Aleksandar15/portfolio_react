@@ -62,7 +62,7 @@ export const myProjectsArray = [
     SRCimage: "images/weatherApp.jpg",
     projectTitle: "Weather APP",
     projectIntro: `Weather APP made with Node, Express, Handlebars.js library,
-    Tailwindcss for the frontend.`,
+    Tailwind CSS for the frontend.`,
     viewWebsiteHREF: "https://weather-app-alek.onrender.com",
     viewSourceCodeHREF: "https://github.com/Aleksandar15/Weather-App",
   },
@@ -89,8 +89,8 @@ export const myProjectsArray = [
     id: 8,
     projectIdentifier: "project_8",
     SRCimage: "images/landingPage.jpg",
-    projectTitle: "Lading Page",
-    projectIntro: `Created landing page using JavaScript, HTML5 and CSS3 with Bootstrap 4 framework.
+    projectTitle: "Landing Page",
+    projectIntro: `Created landing page using HTML5 and CSS3 with Bootstrap 4 framework.
     `,
     viewWebsiteHREF: "https://aleksandar15.github.io",
     viewSourceCodeHREF:
@@ -101,8 +101,8 @@ export const myProjectsArray = [
     projectIdentifier: "project_9",
     SRCimage: "images/Password Generator.jpg",
     projectTitle: "Password Generator",
-    projectIntro: `I created this project with Javascript. Users can create a strong
-    password!`,
+    projectIntro: `I created this project using JavaScript. Users can create a strong randomized
+    password.`,
     viewWebsiteHREF: "https://aleksandar15.github.io/PasswordGenerator",
     viewSourceCodeHREF: "https://github.com/Aleksandar15/PasswordGenerator",
   },

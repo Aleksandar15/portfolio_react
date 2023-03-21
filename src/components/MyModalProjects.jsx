@@ -34,28 +34,6 @@ const MyModalProjects = () => {
     };
   }, [isModalOpen]);
 
-  const projectInfos = {
-    project_1: {
-      // title: "PASSWORD MANAGER",
-      title: "Password Manager",
-      description:
-        // "Span inside P tag description for Password Manager LONg long long long long long long long",
-        // 2
-        // "Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long",
-        // 3
-        // "Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long",
-        // 4
-        "Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long",
-      // 5
-      // "Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long Span inside P tag description for Password Manager LONg long long long long long long long",
-      // // // its not yet scrollable if its TOO long top & bottom arent seen
-    },
-    project_3: {
-      title: "Task Manager APP user auth",
-      description: "Span inside P tag description for Task Manager APP",
-    },
-  };
-
   const setShowModalFN = () => {
     dispatch(openModal({ isModalOpen: !isModalOpen }));
   };
@@ -109,7 +87,6 @@ const MyModalProjects = () => {
                 <h3 className="h3ModalProjectTitle">
                   Title:{" "}
                   <span className="spanModalProjectTitle">
-                    {/* {projectInfos[projectIdentifier]?.title} */}
                     {MoreInfoProjects[projectIdentifier]?.title}
                   </span>
                 </h3>
@@ -117,8 +94,6 @@ const MyModalProjects = () => {
                 {/* Technologies: */}
                 <p className="pTagModalTechnologies">
                   Technologies:{" "}
-                  {/* {projectInfos[projectIdentifier]?.technologies === undefined ||
-                  projectInfos[projectIdentifier]?.technologies === "" ? ( */}
                   {MoreInfoProjects[projectIdentifier]?.technologies ===
                     undefined ||
                   MoreInfoProjects[projectIdentifier]?.technologies === "" ? (
@@ -126,8 +101,10 @@ const MyModalProjects = () => {
                       Technologies not yet provided.
                     </span>
                   ) : (
-                    <span className="spanModalProjectTechnologies">
-                      {/* {projectInfos[projectIdentifier]?.technologies} */}
+                    <span
+                      className="spanModalProjectTechnologies"
+                      style={{ whiteSpace: "pre-line" }}
+                    >
                       {MoreInfoProjects[projectIdentifier]?.technologies}
                     </span>
                   )}
@@ -136,17 +113,19 @@ const MyModalProjects = () => {
                 {/* Description: */}
                 <p className="pTagModalDescription">
                   Description:{" "}
-                  {/* {projectInfos[projectIdentifier] === undefined ||
-                  projectInfos[projectIdentifier] === "" ? ( */}
-                  {MoreInfoProjects[projectIdentifier] === undefined ||
-                  MoreInfoProjects[projectIdentifier] === "" ? (
+                  {MoreInfoProjects[projectIdentifier]?.description ===
+                    undefined ||
+                  MoreInfoProjects[projectIdentifier]?.description === "" ? (
                     <span className="spanModalProjectDescription">
                       {/* Not yet provided. */}
                       Description not yet provided.
                     </span>
                   ) : (
-                    <span className="spanModalProjectDescription">
-                      {/* {projectInfos[projectIdentifier]?.description} */}
+                    <span
+                      className="spanModalProjectDescription"
+                      style={{ whiteSpace: "pre-wrap" }}
+                      // style={{ whiteSpace: "pre-line" }}
+                    >
                       {MoreInfoProjects[projectIdentifier]?.description}
                     </span>
                   )}
