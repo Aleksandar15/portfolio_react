@@ -45,6 +45,15 @@ body.dark {
 
     /* ScrollToTop component */
     --bgColorScrollToTop: gray;
+
+    /* Modal */
+    --backgroundModalSwitch: rgba(0, 0, 0, 0.888);
+    --spanProjectDescriptionColor: greenyellow;
+    --h3colorModalTitle: whitesmoke;
+    --pColorModalTechnologies: rgb(51, 235, 238);
+    
+  /* Read more of my own portfolio */
+  --colorReadMoreMyOwnPortfolio: cyan;
 }
 
 .checkbox {

@@ -1,4 +1,14 @@
-const Header = ({ toggleDarkMode, darkMode }) => {
+import { useDispatch, useSelector } from "react-redux";
+import { selectDarkMode, setDarkMode } from "../redux/slices/darkModeSlice";
+
+const Header = () => {
+  const dispatch = useDispatch();
+  const { darkMode } = useSelector(selectDarkMode);
+
+  const toggleDarkMode = () => {
+    dispatch(setDarkMode({ darkModeState: { darkMode: !darkMode } }));
+  };
+
   return (
     <section className="s1">
       <div className="s1_header">
@@ -20,7 +30,7 @@ const Header = ({ toggleDarkMode, darkMode }) => {
               <ul id="navigation">
                 <li>
                   <a
-                    className="fa fa-github"
+                    className="fa fa-github anchorTagOverrideBootstrap"
                     style={{ fontSize: "30px", color: "red" }}
                     href="https://github.com/Aleksandar15"
                     target="_blank"
@@ -29,7 +39,7 @@ const Header = ({ toggleDarkMode, darkMode }) => {
                 </li>
                 <li>
                   <a
-                    className="fa fa-instagram"
+                    className="fa fa-instagram anchorTagOverrideBootstrap"
                     style={{ fontSize: "30px", color: "green" }}
                     href="HTTPS://instagram.com/aleksandarr15"
                     target="_blank"
@@ -38,7 +48,7 @@ const Header = ({ toggleDarkMode, darkMode }) => {
                 </li>
                 <li>
                   <a
-                    className="fa fa-linkedin"
+                    className="fa fa-linkedin anchorTagOverrideBootstrap"
                     style={{
                       fontSize: "30px",
                       color: "rgba(0, 0, 255, 0.777)",
@@ -49,7 +59,9 @@ const Header = ({ toggleDarkMode, darkMode }) => {
                   ></a>
                 </li>
                 <li>
-                  <a href="#contact">Contact</a>
+                  <a href="#contact" className="anchorTagOverrideBootstrap">
+                    Contact
+                  </a>
                   {/* <a href="#contact" style={{marginLeft:"10px"}}>About</a> */}
                 </li>
               </ul>

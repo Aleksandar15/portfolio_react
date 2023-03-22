@@ -5,18 +5,16 @@ import Header from "../components/Header";
 import AboutMeSection from "../components/AboutMeSection";
 import MyProjects from "../components/MyProjects";
 import ContactMe from "../components/ContactMe";
+import { useDispatch, useSelector } from "react-redux";
+import { selectDarkMode, setDarkMode } from "../redux/slices/darkModeSlice";
 
 const Home = () => {
-  const [darkMode, setDarkMode] = useState(false);
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
+  const dispatch = useDispatch();
+  const { darkMode } = useSelector(selectDarkMode);
 
   useEffect(() => {
-    // check if localStorage "darkMode" is false or true
     const isDarkMode = localStorage.getItem("darkMode") === "true";
-    setDarkMode(isDarkMode);
+    dispatch(setDarkMode({ darkModeState: { darkMode: isDarkMode } }));
   }, []);
 
   useEffect(() => {
@@ -57,7 +55,8 @@ const Home = () => {
             className="scrollToTopComponent"
             style={{ borderRadius: "15px 8px" }}
           />
-          <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
+          {/* <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode} /> */}
+          <Header />
           <AboutMeSection />
           <MyProjects />
           <ContactMe />

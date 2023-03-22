@@ -68,6 +68,16 @@
 
   /* ScrollToTop component */
   --bgColorScrollToTop: green;
+
+  /* Modal */
+  /* --backgroundModalSwitch: whitesmoke; */
+  --backgroundModalSwitch: rgba(245, 245, 245, 0.85);
+  --spanProjectDescriptionColor: #2ACA3E;
+  --h3colorModalTitle: #A13E;
+  --pColorModalTechnologies: rgb(51, 160, 238);
+
+  /* Read more of my own portfolio */
+  --colorReadMoreMyOwnPortfolio: #17a2b8;
 }
 
 
@@ -77,6 +87,8 @@ html, body{
 	padding: 0;
 	margin: 0;
 	scroll-behavior: smooth;
+  /* so: */
+  z-index: 998;
 }
 
 /* body *{
@@ -100,8 +112,9 @@ a{
 	color:#17a2b8;
 }
 
+
 ul{
-	list-style: none;
+  list-style: none;
 }
 
 h1 { font-size: 56px;}
@@ -131,6 +144,9 @@ h6 { font-size: 16px;}
 .main-container{
 	width: 1200px;
 	margin: 0 auto;
+  /*  */
+	/* margin: 10px auto;
+  padding: 10px; */
 }
 
 
@@ -238,6 +254,8 @@ h6 { font-size: 16px;}
   text-align: center;
   line-height: 0;
   color: var(--darkmode);
+  /* line-height: 200%; */
+  /* line-height: 30px; */
 }
 
 #theme-options-wrapper{
@@ -302,6 +320,10 @@ h6 { font-size: 16px;}
 	left: -5px
 }
 
+
+/*  */
+/* AboutMeSection stylings */
+
 .about-wrapper{
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -313,13 +335,17 @@ h6 { font-size: 16px;}
 
 #skills{
 	display: flex;
-	justify-content: space-evenly;
+	/* justify-content: space-evenly; */
+	justify-content: space-around;
+	/* justify-content: space-between; */
 	background-color: var(--previewShadow);
 }
 
 #medium-skills {
   display: flex;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
+  justify-content: space-around;
+  /* justify-content: center; */
   background-color: var(--previewShadow);
   /* justify-content: center; */
 }
@@ -330,7 +356,7 @@ h6 { font-size: 16px;}
 }
 #medium-skill-name {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   text-indent: 44px;
   /* margin-left: 40px; */
   /* justify-content: center; */
@@ -345,11 +371,46 @@ h6 { font-size: 16px;}
 	display: grid;
 	align-content: center;
 	text-align: center;
+  /*  */
+  /* margin-bottom: 50px; */
 }
 
 #social_img{
 	width: 100%;
+  /* line-height: 300px; */
 }
+
+.alertOpensInNewTab{
+  cursor: auto;
+  /* "display: none" is not as good because 
+  current styling shifts the image up/down */
+  /* display: none; */
+  /* Alternative: 'visiblity' or 'opacity' */
+  /* collapse/hidden works the same unless
+  they're used on table elements then 'collapse'
+  works as if `display:none` */
+  visibility: collapse;
+  /* visibility: hidden; */
+  display: block;
+  /* font-size MUST match ".viewResume:hover"
+  otherwise shifts the image up/down */
+  font-size: 11px;
+}
+
+.viewResume:hover .alertOpensInNewTab{
+  visibility: visible;
+  font-size: 11px;
+  /* Move it further down from the button */
+  /* padding-top: 10px; */
+  /* margin-top:10px; */
+  /* Padding/margin won't work as expected
+  since they shift the whole image up/down */
+  /* Alternative: */
+  position: relative;
+  top:8px;
+}
+
+/*  */
 
 
 .post-wrapper{
@@ -374,6 +435,61 @@ h6 { font-size: 16px;}
 	height:180px;
 	object-fit: cover;
 }
+
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* opacity for the "Read More" text
+  when not hovering */
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: rgb(3, 3, 3);
+  /* display: flex; */
+  /* display: block; */
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.image-wrapper:hover .text-overlay {
+  /* opacity for the image behind */
+  opacity: 1;
+  font-size: 33px;
+  font-weight: bold;
+}
+.readMoreImageHover {
+  cursor: pointer;
+  /* text-decoration: underline; */
+  /* text-align: center; */
+  text-decoration: underline;
+  color: red;
+  font-family: 'Russo One', sans-serif;
+  font-weight: normal;
+  font-size: 50px;
+}
+.spanReadMoreImageHover{
+  /* 'block' to render it on new line */
+  /* display: block; */
+  /* or a 'div' wrapper of display: 'grid' */
+  font-size: 12px;
+  text-align: center;
+  /* align-items: center; */
+  cursor: default;
+  font-weight: normal;
+  /* position: relative; */
+  /* white-space: inherit; */
+}
+
+
 
 .post-preview{
 	background-color: rgba(255, 255, 255, 0.1);
@@ -498,6 +614,135 @@ background: blue;
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 0, 255, 0.777); 
 }
+
+/* Project's MyModal and buttons */
+.projectOpenModal {
+  /* cursor:pointer; */
+}
+.readMore {
+  display: none;
+  margin-left: 5px;
+  color:#17a2b8;
+  text-decoration: none;
+}
+
+.projectOpenModal:hover .readMore {
+  display: inline;
+  cursor:pointer;
+}
+
+.spanReadMoreAnchorHover{
+  /* 'block' to render it on new line */
+  /* display: block; */
+  display: none;
+  /* font-size: 12px; */
+  font-size: 10px;
+  text-align: end;
+  /* align-items: center; */
+  cursor: default;
+  font-weight: normal;
+  /* color:#17a2b8; */
+}
+.readMore:hover .spanReadMoreAnchorHover{
+    display: block;
+  }
+
+  .readMoreMyOwnPortfolio{
+    /* display: none; */
+    /* margin-left: 5px; */
+    /* margin-top: 50px; */
+    position: relative;
+    top: 8px;
+    /* color:#17a2b8; */
+    color:var(--colorReadMoreMyOwnPortfolio);
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .spanReadMoreMyOwnPortfolio{
+    font-size: 11px;
+    visibility: hidden;
+    display: block;
+    margin-top: 8px;
+    cursor: default;
+  }
+  .readMoreMyOwnPortfolio:hover .spanReadMoreMyOwnPortfolio{
+    visibility: visible;
+    /* Margin isn't required here, since
+    it keeps it from its original styling above. */
+    /* margin-top: 5px; */
+  }
+
+
+
+/*   */
+/* MyModal */
+.mymodal-wrapper{
+  background-color: var(--backgroundModalSwitch);
+  border-radius: 25px;
+  /* text-align: center; */
+}
+.close-button {
+  position: absolute;
+  /* position: relative; */
+  top: 0;
+  right: 0;
+  font-size: 2rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.h3ModalProjectTitle{
+  color: var(--h3colorModalTitle);
+  text-align: center;
+}
+.spanModalProjectTitle{
+  font-family: 'Russo One', sans-serif;
+  /* text-decoration: underline; */
+  text-decoration: overline underline;
+  color: red;
+}
+.spanModalProjectDescription{
+  /* font-family: 'Russo One', sans-serif; */
+  /* font-family:  system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+  font-family: sans-serif;
+  /* font-family: source-sans-pro; */
+  /* text-decoration: underline; */
+  font-weight: bold;
+  color: var(--spanProjectDescriptionColor);
+  /* font-size: 18px; */
+  font-size: 17px;
+}
+.pTagModalDescription{
+  font-family: 'Russo One', sans-serif;
+  /* font-size: 18px; */
+  color: #A3E;
+  font-size: 20px;
+}
+.spanModalClickOutside{
+  font-size: 10px;
+  position: relative;
+  left: 39%;
+  top: 0px;
+}
+/* Project's technologies */
+.pTagModalTechnologies{
+  font-family: 'Russo One', sans-serif;
+  font-size: 17px;
+  color: var(--pColorModalTechnologies);
+}
+.spanModalProjectTechnologies{
+  /* font-family: sans-serif; */
+  font-family: source-sans-pro;
+  /* text-decoration: underline; */
+  font-weight: bold;
+  /* font-size: 18px; */
+  font-size: 16px;
+  /* color: var(--spanProjectDescriptionColor); */
+  /* color: rgb(70, 255, 42); */
+  color: rgb(255, 131, 42);
+}
+
+
 
 
 /* Different screen sizes */
