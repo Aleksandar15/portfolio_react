@@ -13,6 +13,16 @@
 // },
 
 export const MoreInfoProjects = {
+  project_portfolio: {
+    title: "Aleksandar15 Portfolio",
+    technologies: `ReactJS + Redux Toolkit; CSS3; Vite for faster workflow experience.`,
+    description: `I decided to go with Redux (Toolkit) state managing library, at first I thought it wouldn't be necessary, but it's almost always a good choice when you need to pass 'props' in multiple components without worrying about potential 'props drilling'.
+    
+    Reusability:
+Created "All my projects" array of objects with each object representing one of my projects & I'm mapping over this array stored in 'MyProjectsArray.jsx', which is imported inside 'MyProjects.jsx' component where I have built a 'skeleton-box' for a very easy way of dynamically rendering my projects while following the DRY (don't-repeat-yourself) principle.
+
+I have also built another object inside 'MoreInfoProjects.jsx' consisting of more in-depth informations about each of my project, with each property relating to the Unique Identifier property named 'projectIdentifier' - stored previously in 'MyProjectsArray.jsx' - and here I store that in-depth description about each of my project -> which then I am importing them inside my custom Modal 'MyModalProjects.jsx' and then each button/element with an 'onClick' prop event set to open this modal must have a 'data-target' prop with a value equal to the 'projectIdentifier' (Unique Identifier) which state is then passed into 'MyModalProjects.jsx' using RTK so I can provide those extra descriptions dynamically into my custom Modal's 'skeleton placeholders'.`,
+  },
   project_1: {
     title: "Password Manager",
     technologies: `PostgreSQL database, ExpressJS + NodeJS, ReactJS + Redux, react-bootstrap, Axios; JWT.`,

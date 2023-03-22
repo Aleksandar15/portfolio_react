@@ -75,6 +75,9 @@
   --spanProjectDescriptionColor: #2ACA3E;
   --h3colorModalTitle: #A13E;
   --pColorModalTechnologies: rgb(51, 160, 238);
+
+  /* Read more of my own portfolio */
+  --colorReadMoreMyOwnPortfolio: #17a2b8;
 }
 
 
@@ -378,6 +381,7 @@ h6 { font-size: 16px;}
 }
 
 .alertOpensInNewTab{
+  cursor: auto;
   /* "display: none" is not as good because 
   current styling shifts the image up/down */
   /* display: none; */
@@ -641,6 +645,31 @@ background: blue;
 }
 .readMore:hover .spanReadMoreAnchorHover{
     display: block;
+  }
+
+  .readMoreMyOwnPortfolio{
+    /* display: none; */
+    /* margin-left: 5px; */
+    /* margin-top: 50px; */
+    position: relative;
+    top: 8px;
+    /* color:#17a2b8; */
+    color:var(--colorReadMoreMyOwnPortfolio);
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .spanReadMoreMyOwnPortfolio{
+    font-size: 11px;
+    visibility: hidden;
+    display: block;
+    margin-top: 8px;
+    cursor: default;
+  }
+  .readMoreMyOwnPortfolio:hover .spanReadMoreMyOwnPortfolio{
+    visibility: visible;
+    /* Margin isn't required here, since
+    it keeps it from its original styling above. */
+    /* margin-top: 5px; */
   }
 
 

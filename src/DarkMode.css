@@ -51,6 +51,9 @@ body.dark {
     --spanProjectDescriptionColor: greenyellow;
     --h3colorModalTitle: whitesmoke;
     --pColorModalTechnologies: rgb(51, 235, 238);
+    
+  /* Read more of my own portfolio */
+  --colorReadMoreMyOwnPortfolio: cyan;
 }
 
 .checkbox {

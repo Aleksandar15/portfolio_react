@@ -113,20 +113,24 @@ const MyProjects = () => {
           </div>
           <h5
             style={{
-              color: "red",
+              color: "green",
               textAlign: "center",
               marginBottom: "0px",
               marginTop: "5px",
             }}
           >
-            Heroku notice:
-          </h5>{" "}
-          <h6 style={{ textAlign: "center", marginTop: "0px" }}>
-            <span style={{ color: "green" }}>All</span> projects re-deployed to
-            alternatives to Heroku (<i>which removed free plans</i>).
-            <br></br>
-            I'm testing all of my apps to make sure everything works like
-            before. 😊
+            This portfolio is part of my projects. 😊
+          </h5>
+          <h6
+            style={{ textAlign: "center", marginTop: "0px" }}
+            className="readMoreMyOwnPortfolio"
+            data-target="project_portfolio"
+            onClick={setShowModalFN}
+          >
+            Read more about it
+            <span className="spanReadMoreMyOwnPortfolio">
+              (stays on same page)
+            </span>
           </h6>
         </div>
       </section>
