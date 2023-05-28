@@ -16,7 +16,17 @@
 
 export const myProjectsArray = [
   {
-    id: 1,
+    id: 60,
+    projectIdentifier: "project_60",
+    SRCimage: "images/Cars Club.jpg",
+    projectTitle: "Cars Club",
+    projectIntro: `TypeScript with React & Redux-Toolkit; Node with Express and Multer & PostgreSQL Database.`,
+    viewWebsiteHREF: "https://cars-club.netlify.app",
+    viewSourceCodeHREF: "https://github.com/Aleksandar15/Cars-Club-frontend",
+  },
+  {
+    // id: 1,
+    id: 61,
     projectIdentifier: "project_1",
     SRCimage: "images/Password Manager.jpg",
     projectTitle: "Password Manager",
@@ -27,7 +37,8 @@ export const myProjectsArray = [
       "https://github.com/Aleksandar15/Password-Manager-frontend",
   },
   {
-    id: 2,
+    // id: 2,
+    id: 62,
     projectIdentifier: "project_2",
     SRCimage: "images/KING-Store-Clothes.jpg",
     projectTitle: "KING-Store Clothes",
@@ -37,7 +48,8 @@ export const myProjectsArray = [
     viewSourceCodeHREF: "https://github.com/Aleksandar15/king-store-clothes",
   },
   {
-    id: 3,
+    // id: 3,
+    id: 63,
     projectIdentifier: "project_3",
     SRCimage: "images/TaskApp.jpg",
     projectTitle: "Task-Manager APP",
@@ -47,7 +59,8 @@ export const myProjectsArray = [
     viewSourceCodeHREF: "https://github.com/Aleksandar15/Task-Manager-APP",
   },
   {
-    id: 4,
+    // id: 4,
+    id: 64,
     projectIdentifier: "project_4",
     SRCimage: "images/chatapp.jpg",
     projectTitle: "Chat APP",
@@ -57,7 +70,8 @@ export const myProjectsArray = [
     viewSourceCodeHREF: "https://github.com/Aleksandar15/Chat-APP",
   },
   {
-    id: 5,
+    // id: 5,
+    id: 65,
     projectIdentifier: "project_5",
     SRCimage: "images/weatherApp.jpg",
     projectTitle: "Weather APP",
@@ -67,7 +81,8 @@ export const myProjectsArray = [
     viewSourceCodeHREF: "https://github.com/Aleksandar15/Weather-App",
   },
   {
-    id: 6,
+    // id: 6,
+    id: 66,
     projectIdentifier: "project_6",
     SRCimage: "images/SmartBrain AleK.jpg",
     projectTitle: "Smart Brain App",
@@ -77,7 +92,8 @@ export const myProjectsArray = [
     viewSourceCodeHREF: "https://github.com/Aleksandar15/smart-brain-alek",
   },
   {
-    id: 7,
+    // id: 7,
+    id: 67,
     projectIdentifier: "project_7",
     SRCimage: "images/robo-app.jpg",
     projectTitle: "Robo-App",
@@ -86,7 +102,8 @@ export const myProjectsArray = [
     viewSourceCodeHREF: "https://github.com/Aleksandar15/robo-app",
   },
   {
-    id: 8,
+    // id: 8,
+    id: 68,
     projectIdentifier: "project_8",
     SRCimage: "images/landingPage.jpg",
     projectTitle: "Landing Page",
@@ -97,7 +114,8 @@ export const myProjectsArray = [
       "https://github.com/Aleksandar15/aleksandar15.github.io",
   },
   {
-    id: 9,
+    // id: 9,
+    id: 69,
     projectIdentifier: "project_9",
     SRCimage: "images/Password Generator.jpg",
     projectTitle: "Password Generator",

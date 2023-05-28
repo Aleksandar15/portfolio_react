@@ -23,6 +23,24 @@ Created "All my projects" array of objects with each object representing one of 
 
 I have also built another object inside 'MoreInfoProjects.jsx' consisting of more in-depth informations about each of my project, with each property relating to the Unique Identifier property named 'projectIdentifier' - stored previously in 'MyProjectsArray.jsx' - and here I store that in-depth description about each of my project -> which then I am importing them inside my custom Modal 'MyModalProjects.jsx' and then each button/element with an 'onClick' prop event set to open this modal must have a 'data-target' prop with a value equal to the 'projectIdentifier' (Unique Identifier) which state is then passed into 'MyModalProjects.jsx' using RTK so I can provide those extra descriptions dynamically into my custom Modal's 'skeleton placeholders'.`,
   },
+  project_60: {
+    title: "Cars Club",
+    technologies: `TypeScript with ReactJS + Redux-Toolkit; NodeJS + ExpressJS + MulterJS; PostgreSQL Database; Vite for faster workflow experience.`,
+    description: `About my Full-Stack Cars Club APP:
+
+    Combining my passion for cars I created this fullstack project with one of the main goal being that to improve my TypeScript skills. I had focused on setting up a reusable and scalable codebase that can be used for implementing more features. Now that it's all looking & working smoothly, my app is at a state where I can continue implementing my new ideas in the future updates seamlessly.
+    
+      On the frontend
+    
+    - Users can create a Post with an image, then submit this \`multipart/form-data\` request with all the input values appended to a \`FormData\`.
+    - I'm converting the backend's image value - a "binary data" - into a \`src\` value using a function that first converts it to \`Uint8Array\` instance, then I'm grabbing the \`buffer\` property value & passing it as an argument to the \`Blob\`'s constructor (but passing the whole instance works as well). Finally with \`URL.createObjectURL\` I'm creating a URL from this Blob that is used as the \`src\` value.
+    
+      On the backend
+    
+    - I'm using Multer middleware to process the \`FormData\` received from a \`multipart/form-data\` request with the storage option \`memoryStorage()\`, then using \`upload.single\` instance middleware to populate \`req.file\` with metadata about the image. My controller ONLY stores the "binary data" from the \`buffer\` property into my PostgreSQL as a \`BYTEA\` column type.
+    - My \`refresh_tokens\` and \`posts\` tables both have a MANY-TO-ONE relationship with my \`users\` table.
+    `,
+  },
   project_1: {
     title: "Password Manager",
     technologies: `PostgreSQL database, ExpressJS + NodeJS, ReactJS + Redux, react-bootstrap, Axios; JWT.`,
@@ -32,10 +50,13 @@ I have also built another object inside 'MoreInfoProjects.jsx' consisting of mor
 
   On the frontend:
 With React I avoided any unnecessary re-renders & used strategic re-renders to my advantage for features like multi-device for example: user A logged on 'device A' modifies its "password vault", then the same user A but logged on 'device B' - when they try any CRUD operations on their (unrefreshed) "password vault" page - they will get the latest changes (made on device A) without any refresh on their device B. While also my goal was to use as minimum libraries as possible and to keep following the DRY principle by building reusable components myself & creating custom hooks.
+
   On the backend:
 I implemented "refresh tokens" which are long-lived besides "access tokens" which are short-lived. However I gave the clients an option to stay signed-in until they manually log out in cases where they fully trust their device & network. The user requires a valid refresh token in order to request a new access token - on success they get both new accessToken & refreshToken - while on invalid or expired refresh token the said token is removed from the database and the user is alerted accordingly and redirected to the login page on the frontend.
+
   Anti-hacks security:
 In case where the user's refreshToken is not inside the database -> it means the refreshToken was used by someone else (I suspect it's a hacker) and I alert the user about the potential threat.
+
   The challenge:
 "Multi-device" feature allows the user A logged on device A to "log out all devices"(meaning: empties out the array of refreshToken's in the database) which will technically log-out the same user A but logged on device B & my "safety alert-message" about anti-hacks will get triggered, therefore, the message itself has to have empathy about such a case scenario where some of their family members clicked the "logout all devices" button on another device as an example. It was kind of like a Catch-22 where I couldn't have a separate message and the solution was a guided-empathetic-message to make sure I'm not misleading my users.
 `,
@@ -58,10 +79,14 @@ In my honest opinion using "redux-saga" is almost never a good choice, there's a
     title: "Task-Manager APP",
     technologies: `NodeJS + ExpressJS + MongoDB database, JWT; EJS; SendGrid API for mails.`,
     description: `A task-manager APP with user Authentication is a backend focused project. Users can create an account and start writing notes of things a user has to do. They can mark them up as completed.
+
 Using EJS (Embedded JavaScript) with Node.js which is a templating language that allowed me to generate HTML markup with plain JavaScript. I created templates that contain placeholders for rendering dynamic content -> Hence why this app, deployed on Render.com, runs server-side and EJS renders the frontend.
+
 For the MongoDB the database is hosted on MongoDB Atlas and I'm using the "MONGODB_URL" from my environment to connect to it -> which is a great alternative to hosting a "containerized instance" of MongoDB on Render.com.
+
 SendGrid API is used for sending 'welcome email' to users that create new accounts.
- Extra features:
+
+  Extra features:
 The "/me" route of "Account" section allows the user to change their password or delete their account.
 
 `,
