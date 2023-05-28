@@ -618,6 +618,7 @@ background: blue;
 /* Project's MyModal and buttons */
 .projectOpenModal {
   /* cursor:pointer; */
+  cursor:default;
 }
 .readMore {
   display: none;
@@ -727,7 +728,8 @@ background: blue;
 /* Project's technologies */
 .pTagModalTechnologies{
   font-family: 'Russo One', sans-serif;
-  font-size: 17px;
+  /* font-size: 17px; */
+  font-size: 18px;
   color: var(--pColorModalTechnologies);
 }
 .spanModalProjectTechnologies{
@@ -736,7 +738,8 @@ background: blue;
   /* text-decoration: underline; */
   font-weight: bold;
   /* font-size: 18px; */
-  font-size: 16px;
+  /* font-size: 16px; */
+  font-size: 17px;
   /* color: var(--spanProjectDescriptionColor); */
   /* color: rgb(70, 255, 42); */
   color: rgb(255, 131, 42);
